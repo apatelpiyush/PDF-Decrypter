@@ -35,8 +35,8 @@ A user-friendly **Tkinter-based GUI** tool written in **Python** that allows you
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/pdf-encrypter-decrypter.git
-cd pdf-encrypter-decrypter
+git clone https://github.com/apatelpiyush/pdf_en-or-decrypter.git
+cd pdf_en-or-decrypter
 ```
 
 2. Install dependencies:
@@ -52,7 +52,7 @@ pip install pikepdf
 1. Run the Python script:
 
 ```bash
-python your_script_name.py
+python pdf_modifier.py
 ```
 
 2. In the GUI:
@@ -75,9 +75,10 @@ python your_script_name.py
 ## 🛠️ File Structure
 
 ```
-project-folder/
+pdf_en-or-decrypter/
 ├── pdf_modifier.py
 ├── README.md
+└── LICENSE.txt
 ```
 
 ---
