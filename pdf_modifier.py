@@ -48,6 +48,7 @@ class PDFModifierApp:
         tk.Button(self.root, text='Quit', command=self.root.destroy,
                   cursor='hand2', bg='black', fg='white', font=('cambria', 11), width=10).grid(row=2, column=0, padx=130)
 
+    # Used for handling the file path input to the browse section
     def browse_pdf(self):
         self.file_path = filedialog.askopenfilename(filetypes=[("PDF Files", "*.pdf")])
         if self.file_path:
@@ -56,7 +57,7 @@ class PDFModifierApp:
             self.path_entry.insert(0, self.file_path)
             self.path_entry.config(state='disabled')
             self.browse.config(state='disabled')
-
+    # Used for typing password and presenting encrypting or decrypting button
     def handle_option(self, event):
         option = self.selected.get()
 
@@ -77,6 +78,7 @@ class PDFModifierApp:
             encrypt_btn.bind('<Return>',lambda e:self.encrypt_pdf())
             encrypt_btn.focus_set()
 
+    # Used for decrypting the pdf
     def decrypt_pdf(self):
         password = self.pass_written.get()
         if not password:
@@ -93,6 +95,7 @@ class PDFModifierApp:
         finally:
             self.pass_written.set('')
 
+    # Used for encrypting the pdf
     def encrypt_pdf(self):
         password = self.pass_written.get()
         if not password:
@@ -109,6 +112,7 @@ class PDFModifierApp:
         finally:
             self.pass_written.set('')
 
+    # Used for checking if the file was previously decrypted
     def check_encryption(self):
         try:
             with pikepdf.open(self.file_path) as pdf:
